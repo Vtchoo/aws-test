@@ -1,3 +1,5 @@
 node_modules/
 
+aws-test-key-1.pem
+
 .env
