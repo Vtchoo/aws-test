@@ -34,6 +34,6 @@ app.get('/connections', async (req, res) => {
 app.use('/posts', posts)
 
 app.listen(3000, () => {
-    console.log('server online')
-    console.log(process.env.TZ)
+    const time = new Date
+    console.log(`[${time.toLocaleDateString()} ${time.toLocaleTimeString()}] Server online`)
 })

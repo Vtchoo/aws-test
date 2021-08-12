@@ -8,11 +8,13 @@ const pool = mysql.createPool({
     password: process.env.DB_PASS
 })
 
-pool.query(`SELECT 1`, (err) => {
+pool.query(`SELECT NOW() AS time`, (err, result) => {
     
     if (err) return console.log(err)
     
-    return console.log(`Successful connection to database`)
+    const [{ time }] = result as mysql.RowDataPacket[]
+
+    return console.log(`[${time.toLocaleDateString()} ${time.toLocaleTimeString()}] Database connection estabilished`)
 })
 
 export default pool.promise()
