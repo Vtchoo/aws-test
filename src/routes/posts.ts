@@ -62,6 +62,9 @@ router.post('/', upload.single('file'), async (req, res, next) => {
             s3.deleteObject({
                 Bucket: process.env.AWS_S3_BUCKET_NAME as string,
                 Key: (file as MulterS3File).key,
+            }, (err, data) => {
+                console.log('error', err)
+                console.log('data', data)
             })
         }
 
