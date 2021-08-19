@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.ts"
+    "tsc": "tsc",
+    "dev": "nodemon index.ts",
+    "prod": "pm2 start build/index.js --name server_teste"
   },
   "keywords": [],
   "author": "",
